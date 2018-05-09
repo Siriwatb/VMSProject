@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="semantic.min.js"></script>
+    <script src="js/calendar-edit.js"></script>
+    <link rel="stylesheet" href="css/calendar.css">
+    <link rel="stylesheet" href="semantic.min.css">
+
+  </head>
+  <body>
+    <h3>Input</h3>
+  <div class="ui calendar" id="example1">
+    <div class="ui input left icon">
+      <i class="calendar icon"></i>
+      <input type="text" placeholder="Date/Time">
+    </div>
+  </div>
+  </body>
+  <script>
+  var calendarText = {
+
+    days: ['อา.', 'จ.', 'อ.', 'พ.', 'พฤ.', 'ศ.', 'ส.'],
+    months: ['มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม'],
+    monthsShort: ['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.', 'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.'],
+    today: 'Today',
+    now: 'Now',
+    am: 'AM',
+    pm: 'PM'
+
+  }
+  $('#example1').calendar({
+    type : 'date',
+    ampm: false,
+    text :calendarText,
+  formatter: {
+    // dayHeader: function (date, settings) {
+    //     var month = settings.text.months[date.getMonth()];
+    //     var year = date.getFullYear()+543;
+    //     return month + ' ' + year;
+    //   },
+    // monthHeader: function (date, settings) {
+    //     return date.getFullYear()+543;
+    //   },
+    // yearHeader : function(date, settings) {
+    //   var decadeYear = Math.ceil((date.getFullYear()+543) / 10) * 10;
+    //     return (decadeYear - 9) + ' - ' + (decadeYear + 2);
+    // },
+    date: function (date, settings) {
+      if (!date) return '';
+      var day = date.getDate();
+      var month = settings.text.monthsShort[date.getMonth()];
+      var year = date.getFullYear();
+      return day + '/' + month + '/' + year;
+    }
+  }
+  });
+  </script>
+</html>

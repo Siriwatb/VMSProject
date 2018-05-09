@@ -1,0 +1,26 @@
+
+@import url('https://fonts.googleapis.com/css?family=Athiti|Kanit|Maitree:700|Mitr|Pridi|Prompt|Trirong');
+
+
+.fontMaitree{
+  font-family: 'Maitree', serif;
+}
+.fontTrirong{
+  font-family: 'Trirong', serif;
+}
+.fontAthiti{
+  font-family: 'Athiti', sans-serif;
+}
+.fontKanit{
+  font-family: 'Kanit', sans-serif;
+}
+.fontPrompt{
+  font-family: 'Prompt', sans-serif;
+}
+.fontMitr{
+  font-family: 'Mitr', sans-serif;
+
+}
+.fontPridi{
+  font-family: 'Pridi', serif;
+}
